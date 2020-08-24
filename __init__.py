@@ -30,7 +30,7 @@ def ok():
     url = w.get()
     import subprocess
     try:
-        subprocess.Popen(["zsync_curl", "-u", url, "-i", inputFile, "-o", outputFile], shell=False)
+        subprocess.Popen(["zsync_curl", "-u", url, "-i", inputFilename, "-o", outputFilename], shell=False)
     except Exception as ename:
         m.showerror("ERROR","There was an error running zsync_curl. Is it installed?  (%s)" % ename)
         import sys;sys.exit(1)
