@@ -32,7 +32,7 @@ def ok():
     try:
         subprocess.Popen(["zsync_curl", "-u", url, "-i", inputFile, "-o", outputFile], shell=False)
     except Exception as ename:
-        m.showerror("ERROR","There was an error running zsync_curl. Is it installed?  (%s)")
+        m.showerror("ERROR","There was an error running zsync_curl. Is it installed?  (%s)" % ename)
         import sys;sys.exit(1)
     m.showinfo("Success!","Success!")
     import sys;sys.exit()
