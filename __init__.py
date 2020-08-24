@@ -32,7 +32,7 @@ def ok():
     try:
         command = subprocess.Popen(["zsync_curl", "-u", url, "-i", inputFilename, "-o", outputFilename], shell=False)
         output = command.communicate()[0]
-        rc = child.returncode #https://stackoverflow.com/questions/5631624/how-to-get-exit-code-when-using-python-subprocess-communicate-method
+        rc = command.returncode #https://stackoverflow.com/questions/5631624/how-to-get-exit-code-when-using-python-subprocess-communicate-method
         if rc != 0:
             m.showerror("ERROR - Non-zero exit code.")
             m.showinfo("Output was: %s" % output)
