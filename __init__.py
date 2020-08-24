@@ -20,7 +20,7 @@ def outputFile():
     outputFilename = filedialog.asksaveasfilename(initialdir="/", title="Save as output file", filetypes=(("all files","*.*"), ("all files", "*.*")))
 def ok():
     if inputFilename == "" or outputFilename == "":
-        m.showerror("ERROR!", "No filename was provided.")
+        m.showerror("ERROR!", "No filename was provided.");import sys;sys.exit(1)
     if not m.askyesno("AGGREMENT", "I have read and agree to the EULA."):
         import sys
         sys.exit(1)
