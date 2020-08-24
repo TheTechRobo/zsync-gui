@@ -11,8 +11,6 @@ def chooseFile():
     print('getting filename')
     filename =  filedialog.askopenfilename(initialdir="/", title="Select input file",filetypes = (("all files","*.*"), ("all files", "*.*")))
     print("got filename")
-    if filename == "":
-        return
     return filename
 def inputFileWrapper():
     global inputFilename
@@ -20,10 +18,9 @@ def inputFileWrapper():
 def outputFile():
     global outputFilename
     outputFilename = filedialog.asksaveasfilename(initialdir="/", title="Save as output file", filetypes=(("all files","*.*"), ("all files", "*.*")))
-    if outputFilename == "":
-        del outputFilename
-        return
 def ok():
+    if inputFilename == "" or outputFilename == "":
+        m.showerror("ERROR!", "No filename was provided.")
     if not m.askyesno("AGGREMENT", "I have read and agree to the EULA."):
         import sys
         sys.exit(1)
