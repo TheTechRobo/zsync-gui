@@ -32,10 +32,8 @@ def ok():
     try:
         subprocess.Popen(["zsync_curl", "-u", url, "-i", inputFile, "-o", outputFile], shell=False)
     except Exception as ename:
-        import tkinter.messagebox as m
         m.showerror("ERROR","There was an error running zsync_curl. Is it installed?")
         import sys;sys.exit(1)
-    import tkinter.messagebox as m
     m.showinfo("Success!","Success!")
     import sys;sys.exit()
 main = Tk()
