@@ -19,6 +19,9 @@ def inputFileWrapper():
 def outputFile():
     global outputFilename
     outputFilename = filedialog.asksaveasfilename(initialdir="/", title="Save as output file", filetypes=(("all files","*.*"), ("all files", "*.*")))
+    if outputFilename == "":
+        del outputFilename
+        return
 def ok():
     if not m.askyesno("AGGREMENT", "I have read and agree to the EULA."):
         import sys
@@ -41,5 +44,5 @@ Button(main, text="Select Output File", command=outputFile).pack()
 Label(main, text="Select URL: ").pack(side=LEFT)
 w = Entry(main)
 w.pack(side=LEFT)
-
+Button(main, text="OK",command=ok).pack()
 mainloop()
